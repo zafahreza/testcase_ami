@@ -32,9 +32,9 @@ func addUser(d *DataTest, wg *sync.WaitGroup, mtx *sync.Mutex) {
 		Email:    "test@email.com",
 	}
 
-	//mtx.Lock()
+	mtx.Lock()
 	d.User = u
-	//mtx.Unlock()
+	mtx.Unlock()
 
 }
 
@@ -52,9 +52,9 @@ func addOrder(d *DataTest, wg *sync.WaitGroup, mtx *sync.Mutex) {
 		TotalOrder: 5,
 	}
 
-	//mtx.Lock()
+	mtx.Lock()
 	d.Order = o
-	//mtx.Unlock()
+	mtx.Unlock()
 
 }
 
